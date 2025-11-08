@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SeekerLoans – Personal Loan Connection (Up to $5,000) • Christmas Edition</title>
+  <meta name="description" content="SeekerLoans connects consumers with participating lenders that may offer personal loans up to $5,000. Review terms before accepting any offer.">
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="SeekerLoans – Personal Loan Connection (Christmas Edition)" />
+  <meta property="og:description" content="Check your loan options online. SeekerLoans connects you with participating lenders. Not a lender. Terms vary by lender and state." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-vercel-domain.example" />
+  <meta property="og:image" content="https://your-vercel-domain.example/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Permate lander (original) -->
+  <script id="p-lander-script">!function(e,t,r){var i=t.createElement("script"),n=t.scripts[0];i.defer=!0,i.src=r+(-1===r.indexOf("?")?"?":"&")+"time="+(new Date).getTime(),n.parentNode.insertBefore(i,n)}(window,document,"https://pmcdn1.com/l.js")</script>
+  <!-- Meta Pixel (original) -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1216927746951156');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1216927746951156&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    :root{
+      /* Christmas palette */
+      --xmas-red:#c21807;
+      --xmas-green:#0b6623;
+      --xmas-gold:#ffcc33;
+      --xmas-gold-700:#f4b400;
+
+      /* Base ink */
+      --ink-900:#0e1726;
+      --ink-700:#2c3a4d;
+      --ink-500:#54657e;
+
+      /* Structure */
+      --white:#ffffff;
+      --muted:#e6ecf8;
+      --maxw:980px;
+      --radius:16px;
+      --shadow:0 8px 28px rgba(12, 25, 46, 0.12);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--ink-900);background:#fdfdfd}
+    a{color:var(--xmas-green);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px;position:relative;z-index:2}
+
+    /* Snow canvas OVER content */
+    #snow{position:fixed;inset:0;z-index:1;pointer-events:none}
+
+    /* Header */
+    header{
+      position:relative;z-index:0;
+      background:linear-gradient(180deg, var(--xmas-red) 0%, var(--xmas-green) 100%);
+      color:var(--white);
+      overflow:hidden;
+    }
+    .hero{
+      display:grid;gap:18px;align-items:center;padding:56px 24px;position:relative;
+    }
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.18);font-size:12px}
+    h1{margin:0;font-size:clamp(28px,4vw,40px);line-height:1.15}
+    .sub{font-size:clamp(14px,2.5vw,18px);opacity:0.95}
+
+    .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .grid{display:grid;gap:18px}
+    @media (min-width:880px){
+      .hero{grid-template-columns:1.1fr 0.9fr}
+      .grid-2{grid-template-columns:1fr 1fr}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+    }
+
+    .cta{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 18px;border-radius:12px;background:var(--xmas-gold);color:#1a1a1a;
+      font-weight:700;border:0;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.12)
+    }
+    .cta:hover{background:var(--xmas-gold-700);text-decoration:none}
+
+    /* Ghost button fix: visible on gradient */
+    .ghost{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.6);
+      color:#ffffff;
+    }
+    .ghost:hover{background:rgba(255,255,255,0.24)}
+
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+
+    .section{padding:28px 24px;position:relative;z-index:2}
+    .section h2{margin:0 0 12px 0;font-size:clamp(20px,3vw,26px)}
+    .list{display:grid;gap:12px}
+    .item{display:flex;gap:12px;align-items:flex-start}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--xmas-green);margin-top:8px;flex:0 0 10px}
+    .steps .step{border-left:3px solid var(--muted);padding-left:14px;margin-left:6px}
+    .muted{color:var(--ink-500);font-size:14px}
+
+    /* Make the APR line strong and readable over gradient */
+    .hero .muted{
+      color:#f8f8f8;
+      font-weight:600;
+      text-shadow:0 1px 3px rgba(0,0,0,0.55);
+      letter-spacing:0.1px;
+    }
+
+    .note{background:#fff7e6;border:1px solid #ffe8b3;color:#7a5a00;border-radius:12px;padding:12px}
+    .success{background:#f1faf4;border:1px solid #cce9d8;color:#1a7f37;border-radius:12px;padding:12px}
+
+    .est-grid{display:grid;gap:10px}
+    .est-grid label{font-size:14px;color:var(--ink-700)}
+    input[type="number"]{width:100%;padding:12px;border:1px solid var(--muted);border-radius:10px;background:#fff;font-size:16px}
+    .result{font-weight:700}
+
+    footer{
+      position:relative;z-index:2;
+      background:linear-gradient(180deg, #0b1630, #081024);
+      color:#c9d4ee;padding:32px 24px;margin-top:24px
+    }
+    footer a{color:#c9d4ee}
+    .footer-grid{display:grid;gap:18px}
+    @media(min-width:880px){.footer-grid{grid-template-columns:1.3fr 1fr}}
+    .disclaimer{background:#0a1330;border:1px solid #1c2b57;border-radius:12px;padding:14px;font-size:13px;color:#a9b7d6}
+    .legal{font-size:12px;color:#a9b7d6}
+
+    /* Decorative tree */
+    .xmas-tree{
+      position:absolute;right:24px;bottom:-10px;opacity:0.20;pointer-events:none;
+      width:min(180px,28vw);height:auto;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.18));
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Snow canvas -->
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <!-- Header / Hero -->
+  <header>
+    <div class="container hero">
+      <div>
+        <span class="badge">Connection Service • Not a Lender</span>
+        <h1>Explore Personal Loan Options — Up to $5,000</h1>
+        <p class="sub">
+          SeekerLoans connects consumers with participating lenders.
+          Check your options online in minutes and review terms before accepting any offer.
+        </p>
+        <div class="btn-row">
+          <a class="cta" href="https://pmcloud1.com/c/l" id="cta-top">🎁 Check My Options</a>
+          <a class="cta ghost" href="#how-it-works">How It Works</a>
+        </div>
+        <p class="muted" style="margin-top:10px;">
+          APR ranges and terms are set by individual lenders and may vary by state and your credit profile.
+        </p>
+      </div>
+
+      <!-- Right-side facts card -->
+      <div class="card" style="background:#ffffff;color:#0e3276;">
+        <ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px;">
+          <li>✔ Loan amounts from $100 – $5,000</li>
+          <li>✔ APRs typically range 4.95% – 35.95%</li>
+          <li>✔ No fees to submit your request</li>
+          <li>✔ Fast online process (if matched with a lender)</li>
+        </ul>
+      </div>
+
+      <!-- Decorative tree (inline SVG) -->
+      <svg class="xmas-tree" viewBox="0 0 128 180" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#2e7d32"/>
+            <stop offset="1" stop-color="#0b6623"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#ffdf6e"/>
+            <stop offset="1" stop-color="#ffcc33"/>
+          </linearGradient>
+        </defs>
+        <polygon fill="url(#g1)" points="64,10 100,60 28,60"/>
+        <polygon fill="url(#g1)" points="64,40 116,100 12,100"/>
+        <polygon fill="url(#g1)" points="64,80 128,150 0,150"/>
+        <rect x="56" y="150" width="16" height="20" fill="#6d4c41"/>
+        <circle cx="64" cy="18" r="6" fill="url(#g2)"/>
+        <circle cx="90" cy="70" r="5" fill="#d32f2f"/>
+        <circle cx="40" cy="70" r="5" fill="#1976d2"/>
+        <circle cx="104" cy="110" r="5" fill="#d32f2f"/>
+        <circle cx="24" cy="115" r="5" fill="#1976d2"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Why Choose -->
+  <section class="section">
+    <div class="container grid grid-3">
+      <div class="card">
+        <h2 style="margin-bottom:6px;">Clear, Simple Process</h2>
+        <p class="muted">Short online form. If matched, you’ll be redirected to a lender to review your offer.</p>
+      </div>
+      <div class="card">
+        <h2 style="margin-bottom:6px;">Transparent Terms</h2>
+        <p class="muted">Review APR, fees, and repayment schedule directly on the lender’s website before deciding.</p>
+      </div>
+      <div class="card">
+        <h2 style="margin-bottom:6px;">No Obligation</h2>
+        <p class="muted">Submitting a request doesn’t obligate you to accept any loan offer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section id="how-it-works" class="section">
+    <div class="container grid grid-2">
+      <div class="card steps">
+        <h2>How It Works</h2>
+        <div class="list" aria-label="Steps">
+          <div class="step">
+            <strong>1) Submit a short form</strong>
+            <p class="muted">Provide basic details about yourself and your loan needs.</p>
+          </div>
+          <div class="step">
+            <strong>2) SeekerLoans forwards your request</strong>
+            <p class="muted">If a lender is interested, you’ll be redirected to their site to review the offer.</p>
+          </div>
+          <div class="step">
+            <strong>3) Review before accepting</strong>
+            <p class="muted">Carefully review APR, total cost, and repayment schedule. Only proceed if it fits your situation.</p>
+          </div>
+        </div>
+        <div class="btn-row" style="margin-top:8px;">
+          <a class="cta" href="https://pmcloud1.com/c/l" id="cta-mid">🎄 See My Options</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Basic Eligibility</h2>
+        <ul class="list" style="margin:0;padding:0;list-style:none">
+          <li class="item"><div class="dot"></div><div>U.S. resident, 18+ years old</div></li>
+          <li class="item"><div class="dot"></div><div>Valid email and phone number</div></li>
+          <li class="item"><div class="dot"></div><div>Checking account and steady income source</div></li>
+          <li class="item"><div class="dot"></div><div>Approval is not guaranteed; qualifications vary by lender</div></li>
+        </ul>
+        <p class="note" style="margin-top:10px;">Important: SeekerLoans is not a lender and does not make credit decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loan Details & Estimator -->
+  <section class="section">
+    <div class="container grid grid-2">
+      <div class="card">
+        <h2>Loan Details (Illustrative)</h2>
+        <div class="list">
+          <div class="item"><div class="dot"></div><div>Amounts: $100 – $5,000 (set by lender)</div></div>
+          <div class="item"><div class="dot"></div><div>APR: ~4.95% – 35.95% (varies by lender, credit profile, and state)</div></div>
+          <div class="item"><div class="dot"></div><div>Repayment terms: typically ~90 days to 24 months</div></div>
+          <div class="item"><div class="dot"></div><div>Funding time: may be as soon as the next business day (varies)</div></div>
+        </div>
+        <p class="muted" style="margin-top:8px;">Actual terms will be presented by the lender. Review the full agreement before accepting.</p>
+      </div>
+
+      <div class="card" aria-label="Illustrative payment estimator">
+        <h2>Monthly Payment Estimator</h2>
+        <p class="muted">For planning only. Not an offer or guarantee. Enter your own assumptions:</p>
+        <div class="est-grid">
+          <label for="amt">Loan amount ($)</label>
+          <input id="amt" type="number" min="100" max="5000" step="50" value="1000" inputmode="decimal" />
+          <label for="apr">APR (%)</label>
+          <input id="apr" type="number" min="1" max="60" step="0.1" value="19.9" inputmode="decimal" />
+          <label for="mon">Term (months)</label>
+          <input id="mon" type="number" min="3" max="60" step="1" value="24" inputmode="numeric" />
+          <button class="cta" id="calc">Estimate payment</button>
+          <div class="success" role="status" aria-live="polite">
+            Estimated monthly payment: <span class="result" id="out">$—</span>
+          </div>
+          <p class="muted">This tool uses the standard amortization formula and is for illustration only. Actual payments depend on your lender’s terms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Responsible Borrowing / FAQs -->
+  <section class="section">
+    <div class="container grid grid-2">
+      <div class="card">
+        <h2>Responsible Borrowing Tips</h2>
+        <ul class="list" style="margin:0;padding:0;list-style:none">
+          <li class="item"><div class="dot"></div><div>Borrow only what you need and can repay on time.</div></li>
+          <li class="item"><div class="dot"></div><div>Compare total cost of credit, not just the monthly amount.</div></li>
+          <li class="item"><div class="dot"></div><div>Read the agreement carefully; ask the lender about fees and prepayment terms.</div></li>
+          <li class="item"><div class="dot"></div><div>If unsure, consider consulting a qualified financial professional.</div></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Common Questions</h2>
+        <details>
+          <summary>Is SeekerLoans a lender?</summary>
+          <p class="muted">No. SeekerLoans is a connection service that forwards your request to participating lenders.</p>
+        </details>
+        <details>
+          <summary>Will I be approved?</summary>
+          <p class="muted">Approval is not guaranteed. Each lender has its own criteria and may run a credit check.</p>
+        </details>
+        <details>
+          <summary>When could I receive funds?</summary>
+          <p class="muted">Funding times vary by lender and bank. Some lenders may fund as soon as the next business day after approval.</p>
+        </details>
+        <details>
+          <summary>Are there any fees to submit a request here?</summary>
+          <p class="muted">Submitting a request via SeekerLoans is free. Lender fees and costs, if any, will be disclosed by the lender.</p>
+        </details>
+        <div class="btn-row" style="margin-top:10px;">
+          <a class="cta" href="https://pmcloud1.com/c/l" id="cta-bottom">Continue to SeekerLoans</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Disclaimer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3 style="margin-top:0;color:#e9efff;">About SeekerLoans</h3>
+        <p class="legal">SeekerLoans.com is an online platform that connects consumers with participating lenders. SeekerLoans is not a lender, does not make credit decisions, and does not broker loans. Any loan offer you receive will come directly from an independent lender and is subject to that lender’s terms, conditions, rates, and underwriting policies.</p>
+        <p class="legal">Loan availability, APRs, amounts, and repayment terms vary by lender and state. Submitting a request does not guarantee approval. Lenders may perform credit checks and verify information.</p>
+        <div class="disclaimer" role="note" aria-label="Important legal notice">
+          <strong>Disclaimer:</strong> The information on this page is provided for general guidance only and does not constitute financial advice. Before accepting any loan, carefully review the lender’s agreement, including APR, fees, total cost of credit, and repayment schedule.
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-top:0;color:#e9efff;">Policies & Contact</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;gap:8px">
+          <li><a href="https://seekerloans.com/privacy-policy" rel="noopener">Privacy Policy</a></li>
+          <li><a href="https://seekerloans.com/terms-of-use" rel="noopener">Terms of Use</a></li>
+          <li><a href="https://seekerloans.com/" rel="noopener">SeekerLoans.com</a></li>
+        </ul>
+        <p class="legal" style="margin-top:12px;">© <span id="year"></span> SeekerLoans (connection service). All rights reserved.</p>
+        <p class="legal" style="margin-top:6px;">🎅 Happy Holidays from SeekerLoans!</p>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="container" style="padding:16px">
+      <div class="note">JavaScript is disabled. Buttons will still redirect, but interactive features like the estimator and snow effect won’t work.</div>
+    </div>
+  </noscript>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Payment estimator (amortization)
+    function calcPayment(P, annualRate, months){
+      const r = (annualRate/100)/12;
+      if(!P || !annualRate || !months || months<=0) return null;
+      if(r === 0) return P / months;
+      const factor = Math.pow(1 + r, months);
+      return P * r * factor / (factor - 1);
+    }
+    (function(){
+      const amt = document.getElementById('amt');
+      const apr = document.getElementById('apr');
+      const mon = document.getElementById('mon');
+      const out = document.getElementById('out');
+      const btnCalc = document.getElementById('calc');
+      if(btnCalc){
+        btnCalc.addEventListener('click', function(e){
+          e.preventDefault();
+          const p = parseFloat(amt.value);
+          const a = parseFloat(apr.value);
+          const m = parseInt(mon.value,10);
+          const pay = calcPayment(p,a,m);
+          out.textContent = (pay && isFinite(pay)) ? `$${pay.toFixed(2)}` : '—';
+        });
+      }
+    })();
+
+    // Basic click tracking hook (optional): push to window.dataLayer
+    function trackClick(id){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event:'click_offer', element_id:id, ts:Date.now() });
+    }
+    ['cta-top','cta-mid','cta-bottom'].forEach(id=>{
+      const el=document.getElementById(id);
+      if(el){ el.addEventListener('click', ()=>trackClick(id)); }
+    });
+
+    // ========= Snow effect (canvas overlay) =========
+    (function(){
+      const canvas = document.getElementById('snow');
+      const ctx = canvas.getContext('2d');
+      let flakes = [];
+      let width, height, dpr, flakeCount;
+
+      function resize(){
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        flakeCount = Math.min(220, Math.max(100, Math.floor(width * height / 14000)));
+        if (flakes.length < flakeCount){
+          for(let i=flakes.length;i<flakeCount;i++) flakes.push(makeFlake(true));
+        }else{
+          flakes = flakes.slice(0, flakeCount);
+        }
+      }
+      function rand(min,max){ return Math.random()*(max-min)+min; }
+      function makeFlake(randomY){
+        const size = rand(1, 2.5);
+        const speed = rand(0.4, 1.1) + size*0.05;
+        const sway = rand(0.6, 1.6);
+        const phase = rand(0, Math.PI*2);
+        return {
+          x: rand(0, width),
+          y: randomY ? rand(-height, height) : -10,
+          r: size,
+          v: speed,
+          w: sway,
+          p: phase
+        };
+      }
+      function step(ts){
+        ctx.clearRect(0,0,width,height);
+        const time = ts/1000;
+        for(let i=0;i<flakes.length;i++){
+          const f = flakes[i];
+          f.p += 0.01 * f.w;
+          f.y += f.v;
+          f.x += Math.sin(f.p + time*0.5) * f.w;
+
+          // recycle
+          if (f.y - f.r > height) { flakes[i] = makeFlake(false); }
+          if (f.x + f.r < 0) f.x = width + f.r;
+          if (f.x - f.r > width) f.x = -f.r;
+
+          // draw
+          ctx.beginPath();
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI*2);
+          ctx.fillStyle = 'rgba(255,255,255,0.9)';
+          ctx.shadowColor = 'rgba(255,255,255,0.55)';
+          ctx.shadowBlur = 5;
+          ctx.fill();
+        }
+        ctx.shadowBlur = 0;
+        requestAnimationFrame(step);
+      }
+      window.addEventListener('resize', resize, {passive:true});
+      resize();
+      requestAnimationFrame(step);
+    })();
+    // ========= End snow =========
+  </script>
+</body>
+</html>
